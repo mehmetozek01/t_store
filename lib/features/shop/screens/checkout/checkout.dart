@@ -7,7 +7,7 @@ import 'package:t_store/common/widgets/products/cart/coupon_widget.dart';
 import 'package:t_store/common/widgets/success_screen/success_screen.dart';
 import 'package:t_store/features/shop/screens/cart/widget/cart_items.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_address_section.dart';
-import 'package:t_store/features/shop/screens/checkout/widgets/billing_amount_sectiond.dart';
+import 'package:t_store/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_payment_section.dart';
 import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/colors.dart';

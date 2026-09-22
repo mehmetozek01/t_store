@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/products/ratings/rating_indicator.dart.dart';
+import 'package:t_store/common/widgets/products/ratings/rating_indicator.dart';
 import 'package:t_store/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 import 'package:t_store/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:t_store/utils/constants/sizes.dart';

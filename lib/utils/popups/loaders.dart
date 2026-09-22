@@ -5,10 +5,10 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class TLoaders {
-  static hideSnackBar() =>
+  static void hideSnackBar() =>
       ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
-  static customToast({required message}) {
+  static void customToast({required String message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
@@ -16,13 +16,12 @@ class TLoaders {
         backgroundColor: Colors.transparent,
         content: Container(
           padding: const EdgeInsets.all(12.0),
-
           margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: THelperFunctions.isDarkMode(Get.context!)
-                ? TColors.darkerGrey.withOpacity(.9)
-                : TColors.grey.withOpacity(.9),
+                ? TColors.darkerGrey.withValues(alpha: 0.9)
+                : TColors.grey.withValues(alpha: 0.9),
           ),
           child: Center(
             child: Text(
@@ -35,7 +34,11 @@ class TLoaders {
     );
   }
 
-  static succesSnakBar({required title, message = '', duration = 3}) {
+  static void successSnakBar({
+    required String title,
+    String message = '',
+    int duration = 3,
+  }) {
     Get.snackbar(
       title,
       message,
@@ -46,11 +49,11 @@ class TLoaders {
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),
-      icon: Icon(Iconsax.check, color: TColors.white),
+      icon: const Icon(Iconsax.check, color: TColors.white),
     );
   }
 
-  static warningSnackBar({required title, message = ''}) {
+  static void warningSnackBar({required String title, String message = ''}) {
     Get.snackbar(
       title,
       message,
@@ -59,13 +62,13 @@ class TLoaders {
       colorText: Colors.white,
       backgroundColor: Colors.orange,
       snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(20),
-      icon: Icon(Iconsax.warning_2, color: TColors.white),
+      icon: const Icon(Iconsax.warning_2, color: TColors.white),
     );
   }
 
-  static errorSnackBar({required title, message = ''}) {
+  static void errorSnackBar({required String title, String message = ''}) {
     Get.snackbar(
       title,
       message,
@@ -74,9 +77,9 @@ class TLoaders {
       colorText: TColors.white,
       backgroundColor: Colors.red.shade600,
       snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(20),
-      icon: Icon(Iconsax.warning_2, color: TColors.white),
+      icon: const Icon(Iconsax.warning_2, color: TColors.white),
     );
   }
 }

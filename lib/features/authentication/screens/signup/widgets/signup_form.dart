@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:t_store/features/authentication/screens/signup/widgets/terms_condition_checkbox.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/constants/text_stings.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/validators/validation.dart';
 
 class TSignupForm extends StatelessWidget {

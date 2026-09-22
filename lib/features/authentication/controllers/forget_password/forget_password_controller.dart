@@ -5,17 +5,17 @@ import 'package:t_store/features/authentication/screens/password_configuration/r
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/popups/full_screen_loader.dart';
 import 'package:t_store/utils/popups/loaders.dart';
-import 'package:t_store/utils/popups/networdk_menager.dart';
+import 'package:t_store/utils/popups/network_manager.dart';
 
 class ForgetPasswordController extends GetxController {
   static ForgetPasswordController get instance => Get.find();
 
-  /// Veriables
+ /// Variables
   final email = TextEditingController();
   GlobalKey<FormState> forgetPasswordFormKey = GlobalKey<FormState>();
 
   /// Send Reset Password Email
-  sendPasswordResetEmail() async {
+  Future<void> sendPasswordResetEmail() async {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
@@ -45,9 +45,9 @@ class ForgetPasswordController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Screen
-      TLoaders.succesSnakBar(
+      TLoaders.successSnakBar(
         title: 'Email Sent',
-        message: 'Emaik Link Sent to Reset your Password'.tr,
+        message: 'Email Link Sent to Reset your Password'.tr,
       );
 
       // Redirect
@@ -59,7 +59,7 @@ class ForgetPasswordController extends GetxController {
     }
   }
 
-  resendPasswordResetEmail(String email) async {
+  Future<void> resendPasswordResetEmail(String email) async {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
@@ -81,11 +81,10 @@ class ForgetPasswordController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Screen
-      TLoaders.succesSnakBar(
+      TLoaders.successSnakBar(
         title: 'Email Sent',
         message: 'Emaik Link Sent to Reset your Password'.tr,
       );
-
     } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();

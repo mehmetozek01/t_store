@@ -10,7 +10,7 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/popups/full_screen_loader.dart';
 import 'package:t_store/utils/popups/loaders.dart';
-import 'package:t_store/utils/popups/networdk_menager.dart';
+import 'package:t_store/utils/popups/network_manager.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();

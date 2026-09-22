@@ -1,17 +1,79 @@
-# t_store
+# T Store
 
-A new Flutter project.
+T Store is a Flutter-based e-commerce mobile application developed to practice and demonstrate modern mobile application development with Firebase and GetX.
 
-## Getting Started
+The project includes authentication, user profile management, product browsing, cart, wishlist, checkout, reviews, themes, and Firebase integration.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- User authentication
+- Email verification
+- Forgot / reset password flow
+- User profile management
+- Change name
+- Re-authentication before sensitive actions
+- Product listing
+- Product detail screens
+- Categories and brands
+- Cart
+- Wishlist
+- Checkout UI
+- Order screens
+- Product reviews
+- Dark / Light theme
+- Firebase Authentication
+- Cloud Firestore
+- Responsive Flutter UI
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Tech Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter
+- Dart
+- Firebase
+  - Authentication
+  - Cloud Firestore
+- GetX
+- Material Design
+
+## Project Structure
+
+```text
+lib/
+├── bindings/
+├── common/
+│   ├── styles/
+│   └── widgets/
+├── data/
+│   ├── repositories/
+│   └── services/
+├── features/
+│   ├── authentication/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   └── screens/
+│   ├── personalization/
+│   │   └── data/
+│   │       ├── controllers/
+│   │       ├── models/
+│   │       └── screens/
+│   └── shop/
+│       ├── controllers/
+│       ├── models/
+│       └── screens/
+├── localization/
+├── utils/
+│   ├── constants/
+│   ├── device/
+│   ├── exceptions/
+│   ├── formatter/
+│   ├── helpers/
+│   ├── http/
+│   ├── local_storage/
+│   ├── logging/
+│   ├── popups/
+│   ├── theme/
+│   └── validators/
+├── app.dart
+├── firebase_options.dart
+├── main.dart
+└── navigation_menu.dart

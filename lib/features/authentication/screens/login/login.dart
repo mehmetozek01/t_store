@@ -6,7 +6,7 @@ import 'package:t_store/common/widgets/login_signup/social_buttons.dart';
 import 'package:t_store/features/authentication/screens/login/widget/login_form.dart';
 import 'package:t_store/features/authentication/screens/login/widget/login_header.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/constants/text_stings.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

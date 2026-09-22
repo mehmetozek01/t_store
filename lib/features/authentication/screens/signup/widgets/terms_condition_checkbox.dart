@@ -4,7 +4,7 @@ import 'package:t_store/features/authentication/controllers/signup/signup_contro
 import 'package:t_store/utils/helpers/helper_functions.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/constants/text_stings.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 
 class TTeermsAndConditionCheckbox extends StatelessWidget {
   const TTeermsAndConditionCheckbox({super.key});

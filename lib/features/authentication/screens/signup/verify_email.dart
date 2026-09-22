@@ -5,7 +5,7 @@ import 'package:t_store/data/repositories/authentication_repository.dart';
 import 'package:t_store/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/constants/text_stings.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class VerifyEmailScreen extends StatelessWidget {

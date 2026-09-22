@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:t_store/utils/popups/networdk_menager.dart';
+import 'package:t_store/utils/popups/network_manager.dart';
 
 class GeneralBindings extends Bindings {
   @override

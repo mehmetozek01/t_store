@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:t_store/common/widgets/success_screen/success_screen.dart';
 import 'package:t_store/data/repositories/authentication_repository.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/text_stings.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/popups/loaders.dart';
 
 class VerifyEmailController extends GetxController {
@@ -23,7 +23,7 @@ class VerifyEmailController extends GetxController {
   Future<void> sendEmailVerification() async {
     try {
       await AuthenticationRepository.instance.sendEmailVerification();
-      TLoaders.succesSnakBar(
+      TLoaders.successSnakBar(
         title: 'Email Sent',
         message: 'Please Check your inbox and verify your email',
       );

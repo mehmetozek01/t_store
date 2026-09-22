@@ -3,11 +3,11 @@ import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/shop/screens/prdoct_details/widget/bottom_add_cart_widget.dart';
-import 'package:t_store/features/shop/screens/prdoct_details/widget/product_attributes.dart';
-import 'package:t_store/features/shop/screens/prdoct_details/widget/product_detail_image_slider.dart';
-import 'package:t_store/features/shop/screens/prdoct_details/widget/product_meta_data.dart';
-import 'package:t_store/features/shop/screens/prdoct_details/widget/rating_shara_widget.dart';
+import 'package:t_store/features/shop/screens/product_details/widget/bottom_add_cart_widget.dart';
+import 'package:t_store/features/shop/screens/product_details/widget/product_attributes.dart';
+import 'package:t_store/features/shop/screens/product_details/widget/product_detail_image_slider.dart';
+import 'package:t_store/features/shop/screens/product_details/widget/product_meta_data.dart';
+import 'package:t_store/features/shop/screens/product_details/widget/rating_share_widget.dart';
 import 'package:t_store/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
