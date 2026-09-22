@@ -1,31 +1,32 @@
 # T Store
 
-T Store is a Flutter-based e-commerce mobile application developed to practice and demonstrate modern mobile application development with Firebase and GetX.
+T Store, Flutter kullanılarak geliştirilen bir e-ticaret mobil uygulamasıdır.
 
-The project includes authentication, user profile management, product browsing, cart, wishlist, checkout, reviews, themes, and Firebase integration.
+Projenin amacı; Flutter, Firebase ve GetX kullanarak modern bir mobil uygulama yapısını geliştirmek, kullanıcı işlemleri, ürün listeleme, sepet, favoriler, ödeme ekranları ve profil yönetimi gibi temel e-ticaret özelliklerini uygulamaktır.
 
-## Features
+## Özellikler
 
-- User authentication
-- Email verification
-- Forgot / reset password flow
-- User profile management
-- Change name
-- Re-authentication before sensitive actions
-- Product listing
-- Product detail screens
-- Categories and brands
-- Cart
-- Wishlist
-- Checkout UI
-- Order screens
-- Product reviews
-- Dark / Light theme
+- Kullanıcı girişi
+- Kullanıcı kaydı
+- E-posta doğrulama
+- Şifre sıfırlama
+- Kullanıcı profil yönetimi
+- Kullanıcı adı güncelleme
+- Hassas işlemler öncesi yeniden kimlik doğrulama
+- Ürün listeleme
+- Ürün detay ekranı
+- Kategori ve marka ekranları
+- Sepet
+- Favoriler
+- Ödeme ekranı
+- Sipariş ekranları
+- Ürün değerlendirmeleri
+- Açık / Koyu tema
 - Firebase Authentication
 - Cloud Firestore
-- Responsive Flutter UI
+- Responsive Flutter arayüzü
 
-## Tech Stack
+## Kullanılan Teknolojiler
 
 - Flutter
 - Dart
@@ -35,9 +36,9 @@ The project includes authentication, user profile management, product browsing, 
 - GetX
 - Material Design
 
-## Project Structure
+## Proje Yapısı
 
-```text
+~~~text
 lib/
 ├── bindings/
 ├── common/
@@ -77,3 +78,64 @@ lib/
 ├── firebase_options.dart
 ├── main.dart
 └── navigation_menu.dart
+~~~
+
+## Projenin Durumu
+
+Proje aktif olarak geliştirilmektedir.
+
+Arayüz tarafının büyük bölümü tamamlanmıştır. Firebase işlemleri, profil özellikleri, ürün verileri ve bazı uygulama fonksiyonları geliştirilmeye devam etmektedir.
+
+## Kurulum
+
+Projeyi klonlayın:
+
+~~~bash
+git clone https://github.com/mehmetozek01/t_store.git
+~~~
+
+Proje klasörüne girin:
+
+~~~bash
+cd t_store
+~~~
+
+Bağımlılıkları yükleyin:
+
+~~~bash
+flutter pub get
+~~~
+
+Uygulamayı çalıştırın:
+
+~~~bash
+flutter run
+~~~
+
+## Kod Kalitesi
+
+Proje şu anda Flutter analizinden hatasız geçmektedir:
+
+~~~text
+No issues found!
+~~~
+
+## Yapılacaklar
+
+- Firebase entegrasyonlarını tamamlamak
+- Kullanıcı profil özelliklerini tamamlamak
+- Profil fotoğrafı yükleme özelliğini eklemek
+- Ürün verilerini backend ile bağlamak
+- Sepet işlemlerini tamamlamak
+- Favori işlemlerini tamamlamak
+- Ödeme akışını geliştirmek
+- Çoklu dil desteği eklemek
+- UI/UX iyileştirmeleri yapmak
+- Proje tamamlandıktan sonra ekran görüntüleri eklemek
+- Release sürümünü hazırlamak
+
+## Geliştirici
+
+**Mehmet Veysi Özek**
+
+Flutter Developer
