@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
@@ -44,12 +45,15 @@ class TRoundedImage extends StatelessWidget {
           borderRadius: applImageRadius
               ? BorderRadius.circular(bordeRadius)
               : BorderRadius.zero,
-          child: Image(
-            fit: fit,
-            image: isNetworkImage
-                ? NetworkImage(imageUrl)
-                : AssetImage(imageUrl) as ImageProvider,
-          ),
+          child: isNetworkImage
+              ? CachedNetworkImage(
+                  imageUrl: imageUrl,
+                  fit: fit,
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                )
+              : Image(image: AssetImage(imageUrl), fit: fit),
         ),
       ),
     );
