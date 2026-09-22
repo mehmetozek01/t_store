@@ -51,6 +51,16 @@ class HomeScreen extends StatelessWidget {
                   //     ],
                   //   ),
                   // ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: TSizes.defaultSpace,
+                    ),
+                    child: TSectionHeading(
+                      title: 'Popular Categories',
+                      showActionButton: false,
+                    ),
+                  ),
+                  SizedBox(height: TSizes.defaultSpace / 2),
                   THomeCategories(),
                   SizedBox(height: TSizes.spaceBtwSections),
                 ],

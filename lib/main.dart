@@ -5,7 +5,7 @@ import 'package:get/get_instance/get_instance.dart';
 import 'package:get/utils.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:t_store/app.dart';
-import 'package:t_store/data/repositories/authentication_repository.dart';
+import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:t_store/firebase_options.dart';
 
 /// -- Entry Point Of Flutter App

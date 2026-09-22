@@ -4,7 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:t_store/data/repositories/authentication_repository.dart';
+import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:t_store/features/personalization/data/models/user_model.dart';
 import 'package:t_store/utils/exceptions/firebase_exceptions.dart';
 import 'package:t_store/utils/exceptions/format_exceptions.dart';

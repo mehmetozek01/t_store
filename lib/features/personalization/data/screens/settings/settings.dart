@@ -5,7 +5,7 @@ import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/primary_container.dart';
 import 'package:t_store/common/widgets/list_files/user_profile_tile.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/data/repositories/authentication_repository.dart';
+import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:t_store/features/personalization/data/screens/address/addresses.dart';
 import 'package:t_store/features/personalization/data/screens/profile/profile.dart';
 import 'package:t_store/features/personalization/data/screens/settings/settings_menu_tile.dart';
