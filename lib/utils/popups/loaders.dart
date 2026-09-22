@@ -34,7 +34,7 @@ class TLoaders {
     );
   }
 
-  static void successSnakBar({
+  static void successSnackBar({
     required String title,
     String message = '',
     int duration = 3,

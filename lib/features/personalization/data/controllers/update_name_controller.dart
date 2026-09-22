@@ -66,7 +66,7 @@ class UpdateNameController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Mesage
-      TLoaders.successSnakBar(
+      TLoaders.successSnackBar(
         title: 'Congratulations',
         message: 'Your Name has been update.',
       );

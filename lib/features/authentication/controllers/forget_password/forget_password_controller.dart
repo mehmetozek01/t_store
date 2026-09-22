@@ -10,7 +10,7 @@ import 'package:t_store/utils/popups/network_manager.dart';
 class ForgetPasswordController extends GetxController {
   static ForgetPasswordController get instance => Get.find();
 
- /// Variables
+  /// Variables
   final email = TextEditingController();
   GlobalKey<FormState> forgetPasswordFormKey = GlobalKey<FormState>();
 
@@ -45,7 +45,7 @@ class ForgetPasswordController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Screen
-      TLoaders.successSnakBar(
+      TLoaders.successSnackBar(
         title: 'Email Sent',
         message: 'Email Link Sent to Reset your Password'.tr,
       );
@@ -81,7 +81,7 @@ class ForgetPasswordController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Screen
-      TLoaders.successSnakBar(
+      TLoaders.successSnackBar(
         title: 'Email Sent',
         message: 'Emaik Link Sent to Reset your Password'.tr,
       );
