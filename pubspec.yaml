@@ -28,6 +28,7 @@ dependencies:
   # Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.8
+  flutter_launcher_icons: ^0.14.4
 
   # State Management
   get: ^4.7.2
@@ -89,3 +90,8 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logos/t_logo.png"
