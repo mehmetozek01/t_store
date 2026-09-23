@@ -26,14 +26,6 @@ class CategoryController extends GetxController {
       // Fetch categories from data source (Firestore, API, etc)
       final categories = await _categoryRepository.getAllCategories();
 
-      print('CATEGORY COUNT: ${categories.length}');
-
-      for (var category in categories) {
-        print(
-          'ID: ${category.id} | Name: ${category.name} | ParentId: ${category.parentId} | Featured: ${category.isFeatured}',
-        );
-      }
-
       // Update the categories list
       allCategories.assignAll(categories);
 

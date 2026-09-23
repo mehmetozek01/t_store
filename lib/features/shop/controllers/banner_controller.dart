@@ -16,7 +16,7 @@ class BannerController extends GetxController {
   }
 
   /// Update Page Navigational Dots
-  void updatePageIndicator(index) {
+  void updatePageIndicator(int index) {
     carousalCurrentIndex.value = index;
   }
 
