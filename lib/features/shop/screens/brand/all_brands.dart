@@ -28,7 +28,7 @@ class AllBrands extends StatelessWidget {
               TGridLayout(
                 itemCount: 10,
                 mainAxisExtent: 80,
-                itembuilder: (context, index) => TBrandCard(
+                itemBuilder: (context, index) => TBrandCard(
                   showBorder: true,
                   onTap: () => Get.to(() => BrandProducts()),
                 ),

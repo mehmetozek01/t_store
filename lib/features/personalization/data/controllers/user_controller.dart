@@ -32,6 +32,13 @@ class UserController extends GetxController {
     fetchUserRecord();
   }
 
+  @override
+  void onClose() {
+    verifyEmail.dispose();
+    verifyPassword.dispose();
+    super.onClose();
+  }
+
   /// Fetch user record
   Future<void> fetchUserRecord() async {
     try {
@@ -116,7 +123,7 @@ class UserController extends GetxController {
   }
 
   /// Delete User Account
-  void deleteUserAccount() async {
+  Future<void> deleteUserAccount() async {
     try {
       TFullScreenLoader.openLoadingDialog('Processing', TImages.docerAnimation);
 
@@ -128,9 +135,12 @@ class UserController extends GetxController {
       if (provider.isNotEmpty) {
         // Re Verify Auth Email
         if (provider == 'google.com') {
-          await auth.signInWithGoogle();
+          await auth.reAuthenticateWithGoogle();
+
           await auth.deleteAccount();
+
           TFullScreenLoader.stopLoading();
+
           Get.offAll(() => const LoginScreen());
         } else if (provider == 'password') {
           TFullScreenLoader.stopLoading();

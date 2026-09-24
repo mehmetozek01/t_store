@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
@@ -6,9 +5,7 @@ import 'package:t_store/common/widgets/products/product_cards/product_card_verti
 import 'package:t_store/utils/constants/sizes.dart';
 
 class TSortableProducts extends StatelessWidget {
-  const TSortableProducts({
-    super.key,
-  });
+  const TSortableProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +13,7 @@ class TSortableProducts extends StatelessWidget {
       children: [
         /// Dropdown
         DropdownButtonFormField(
-          decoration: const InputDecoration(
-            prefixIcon: Icon(Iconsax.sort),
-          ),
+          decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
           onChanged: (value) {},
           items:
               [
@@ -30,20 +25,18 @@ class TSortableProducts extends StatelessWidget {
                     'Popularity',
                   ]
                   .map(
-                    (option) => DropdownMenuItem(
-                      value: option,
-                      child: Text(option),
-                    ),
+                    (option) =>
+                        DropdownMenuItem(value: option, child: Text(option)),
                   )
                   .toList(),
         ),
         const SizedBox(height: TSizes.spaceBtwSections),
-    
+
         /// Products
-        TGridLayout(
-          itemCount: 8,
-          itembuilder: (_, index) => TProductCardVertical(),
-        ),
+        // TGridLayout(
+        //   itemCount: 8,
+        //   itemBuilder: (_, index) => TProductCardVertical(),
+        // ),
       ],
     );
   }

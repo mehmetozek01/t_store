@@ -5,13 +5,13 @@ class TGridLayout extends StatelessWidget {
   const TGridLayout({
     super.key,
     required this.itemCount,
-    required this.itembuilder,
+    required this.itemBuilder,
     this.mainAxisExtent = 288,
   });
 
   final int itemCount;
   final double? mainAxisExtent;
-  final Widget? Function(BuildContext, int) itembuilder;
+  final Widget? Function(BuildContext, int) itemBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TGridLayout extends StatelessWidget {
         crossAxisSpacing: TSizes.gridViewSpacing,
         mainAxisExtent: mainAxisExtent,
       ),
-      itemBuilder: itembuilder,
+      itemBuilder: itemBuilder,
     );
   }
 }

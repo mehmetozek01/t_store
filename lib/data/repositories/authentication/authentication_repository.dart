@@ -190,6 +190,35 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  ///*[GoogleAuthentication]*- ReAuthenticate User with Google
+  Future<void> reAuthenticateWithGoogle() async {
+    try {
+      final GoogleSignIn googleSignIn = GoogleSignIn.instance;
+
+      await googleSignIn.initialize();
+
+      final GoogleSignInAccount userAccount = await googleSignIn.authenticate();
+
+      final GoogleSignInAuthentication googleAuth = userAccount.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        idToken: googleAuth.idToken,
+      );
+
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
   ///[FacebookAuthentication]- FACEBOOK
 
   /* -------------------  .\end Federated identity & social sign-in  ----------------------*/

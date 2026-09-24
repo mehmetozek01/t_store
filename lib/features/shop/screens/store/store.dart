@@ -72,7 +72,7 @@ class StoreScreen extends StatelessWidget {
                         TGridLayout(
                           itemCount: 4,
                           mainAxisExtent: 80,
-                          itembuilder: (_, index) {
+                          itemBuilder: (_, index) {
                             return const TBrandCard(showBorder: true);
                           },
                         ),

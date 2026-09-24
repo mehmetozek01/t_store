@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
+import 'package:t_store/common/models/dummy_data.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/primary_container.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:t_store/common/widgets/shimmer/vertical_product_shimmer.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/data/repositories/product/product_repository.dart';
+import 'package:t_store/features/shop/controllers/product_controller.dart';
 import 'package:t_store/features/shop/screens/all_products/all_products.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
@@ -17,6 +22,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -33,23 +39,6 @@ class HomeScreen extends StatelessWidget {
                   TSearchContainer(text: 'Search in Store', showBorder: false),
                   SizedBox(height: TSizes.spaceBtwSections),
 
-                  /// -- Categories
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: TSizes.defaultSpace),
-                  //   child: Column(
-                  //     children: [
-                  //       /// -- Heading
-                  //       TSectionHeading(
-                  //         title: 'Popular Categories',
-                  //         showActionButton: false,
-                  //         textColor: Colors.white,
-                  //       ),
-                  //       SizedBox(height: TSizes.spaceBtwSections),
-
-                  //       /// Categories
-                  //     ],
-                  //   ),
-                  // ),
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: TSizes.defaultSpace,
@@ -74,6 +63,15 @@ class HomeScreen extends StatelessWidget {
                   /// -- Promo Slider
                   TPromoSlider(),
                   const SizedBox(height: TSizes.spaceBtwSections),
+                  ElevatedButton(
+                    onPressed: () async {
+                      await ProductRepository.instance.uploadDummyData(
+                        TDummyData.products,
+                      );
+                    },
+
+                    child: const Text('Upload Products'),
+                  ),
 
                   /// -- Heading
                   TSectionHeading(
@@ -83,10 +81,25 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Popular Products
-                  TGridLayout(
-                    itemCount: 2,
-                    itembuilder: (_, index) => const TProductCardVertical(),
-                  ),
+                  Obx(() {
+                    if (controller.isLoading.value) {
+                      return const TVerticalProductShimmer();
+                    }
+                    if (controller.featuredProducts.isEmpty) {
+                      return Center(
+                        child: Text(
+                          'No Data Found!',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      );
+                    }
+                    return TGridLayout(
+                      itemCount: controller.featuredProducts.length,
+                      itemBuilder: (_, index) => TProductCardVertical(
+                        product: controller.featuredProducts[index],
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
