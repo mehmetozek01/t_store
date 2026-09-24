@@ -119,49 +119,49 @@ class TProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
+
+            /// Price + Add to Cart
             Spacer(),
 
-            /// Price Row
-            /// Price + Add to Cart
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                /// Price Area
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (product.productType ==
-                              ProductType.single.toString() &&
-                          product.salePrice > 0)
-                        Text(
-                          product.price.toString(),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.labelMedium!.apply(
-                            decoration: TextDecoration.lineThrough,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: TSizes.sm,
+                      bottom: TSizes.sm / 2,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (product.productType ==
+                                ProductType.single.toString() &&
+                            product.salePrice > 0)
+                          Text(
+                            product.price.toString(),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.labelMedium!
+                                .apply(decoration: TextDecoration.lineThrough),
                           ),
-                        ),
 
-                      SizedBox(
-                        width: double.infinity,
-                        child: FittedBox(
+                        FittedBox(
                           fit: BoxFit.scaleDown,
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                           child: TProductPriceText(
                             price: controller.getProductPrice(product),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-                const SizedBox(width: TSizes.sm),
 
-                /// Add to Cart Button
                 Container(
+                  width: 44,
+                  height: 44,
                   decoration: const BoxDecoration(
                     color: TColors.dark,
                     borderRadius: BorderRadius.only(
@@ -169,13 +169,7 @@ class TProductCardVertical extends StatelessWidget {
                       bottomRight: Radius.circular(TSizes.productImageRadius),
                     ),
                   ),
-                  child: const SizedBox(
-                    width: TSizes.iconLg * 1.2,
-                    height: TSizes.iconMd * 1.2,
-                    child: Center(
-                      child: Icon(Iconsax.add, color: TColors.white),
-                    ),
-                  ),
+                  child: const Icon(Iconsax.add, color: TColors.white),
                 ),
               ],
             ),

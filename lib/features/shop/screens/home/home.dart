@@ -15,20 +15,23 @@ import 'package:t_store/features/shop/screens/all_products/all_products.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     final controller = Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
-            const TPrimaryHeaderContainer(
+            TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   ///-- Appbar
@@ -45,6 +48,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: TSectionHeading(
                       title: 'Popular Categories',
+                      textColor: dark ? TColors.black : TColors.white,
                       showActionButton: false,
                     ),
                   ),
@@ -63,15 +67,6 @@ class HomeScreen extends StatelessWidget {
                   /// -- Promo Slider
                   TPromoSlider(),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  ElevatedButton(
-                    onPressed: () async {
-                      await ProductRepository.instance.uploadDummyData(
-                        TDummyData.products,
-                      );
-                    },
-
-                    child: const Text('Upload Products'),
-                  ),
 
                   /// -- Heading
                   TSectionHeading(
